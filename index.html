@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Someone Special ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffe0eb, #ffc2d8, #fff0f5);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #7a1744;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 25px 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page.active {
+    display: flex;
+    animation: fadeIn 0.7s ease;
+}
+
+.card {
+    width: 100%;
+    max-width: 440px;
+    padding: 32px 23px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.75);
+    box-shadow: 0 15px 45px #d6338450;
+    border: 1px solid #ffffff;
+}
+
+.emoji {
+    font-size: 55px;
+    margin-bottom: 18px;
+    animation: heartbeat 1.5s infinite;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 18px;
+    color: #d63384;
+}
+
+h2 {
+    font-size: 25px;
+    color: #d63384;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+    color: #7a1744;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 13px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.yes-btn {
+    background: linear-gradient(135deg, #ff4f91, #e60073);
+    color: white;
+    box-shadow: 0 5px 15px #e6007350;
+}
+
+.no-btn {
+    background: #eee;
+    color: #777;
+    position: absolute;
+    left: 58%;
+    top: 0;
+}
+
+.buttons {
+    position: relative;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.yes-btn:hover {
+    transform: scale(1.08);
+}
+
+.small-text {
+    font-size: 13px;
+    color: #b34476;
+    margin-top: 15px;
+}
+
+/* PAGE 2 */
+
+.sticker-box {
+    width: 100%;
+    height: 230px;
+    border: 2px dashed #ff72a8;
+    border-radius: 22px;
+    background: #fff0f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.sticker-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.placeholder {
+    padding: 20px;
+    color: #c04b80;
+    line-height: 1.8;
+}
+
+.next-btn {
+    background: #e60073;
+    color: white;
+    margin-top: 12px;
+}
+
+/* PAGE 3 */
+
+.love-note {
+    background: linear-gradient(145deg, #fff0f6, #ffe0eb);
+    border-radius: 20px;
+    padding: 22px 17px;
+    margin-top: 18px;
+    text-align: left;
+    line-height: 1.9;
+}
+
+.love-note p {
+    margin-bottom: 14px;
+}
+
+.love-note p:last-child {
+    margin-bottom: 0;
+}
+
+.signature {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d63384;
+    margin-top: 23px;
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    z-index: 5;
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+    }
+}
+
+@media(max-width: 380px) {
+    h1 { font-size: 27px; }
+    .card { padding: 27px 17px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: SORRY -->
+
+<section class="page active" id="page1">
+    <div class="card">
+
+        <div class="emoji">🥺💗</div>
+
+        <h1>I'm Really Sorry ❤️</h1>
+
+        <p>
+            I know I made a mistake, and I'm truly sorry,
+            sweetheart. 🥺💔<br>
+            I never wanted to hurt your beautiful heart. 🫶💖
+        </p>
+
+        <h2>Please Forgive Me? 🥹💕</h2>
+
+        <p>
+            Can we leave this sadness behind
+            and smile together again? 🥺🌷
+        </p>
+
+        <div class="buttons" id="buttonArea">
+
+            <button class="yes-btn" onclick="goToPage(2)">
+                YES 💖
+            </button>
+
+            <button class="no-btn" id="noButton">
+                NO 🙈
+            </button>
+
+        </div>
+
+        <div class="small-text">
+            Made with love, just for you 💌✨
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PAGE 2: SORRY GIF/STICKER -->
+
+<section class="page" id="page2">
+    <div class="card">
+
+        <div class="emoji">💌🌷</div>
+
+        <h1>Thank You, Sweetheart! 🥹❤️</h1>
+
+        <p>
+            You're giving my heart a little hope again. 🫶💗
+            Here's a little something just for you! 🥰✨
+        </p>
+
+        <!--
+        APNA GIF YAHAN ADD KARNA:
+        GIF ka naam sorry.gif rakhna.
+        GIF ko index.html ke same folder mein rakhna.
+        -->
+
+        <div class="sticker-box">
+
+            <img
+                src="sorry.gif"
+                alt="My sorry sticker 💗"
+                onerror="this.style.display='none';
+                document.getElementById('placeholder').style.display='block';"
+            >
+
+            <div class="placeholder" id="placeholder"
+                 style="display:none;">
+
+                💗 YOUR SORRY GIF GOES HERE 💗<br><br>
+
+                Apna sticker yahan add karna 🥹🎀<br>
+                File name: sorry.gif
+
+            </div>
+
+        </div>
+
+        <h2>I'm Sorry, My Cutie! 🥺💞</h2>
+
+        <p>
+            If I could, I'd send you a thousand hugs
+            and a million smiles. 🫂💖🌸<br>
+            You deserve love, respect and happiness. 🥰🫶
+        </p>
+
+        <button class="next-btn" onclick="goToPage(3)">
+            Tap to Continue 💗 ➜
+        </button>
+
+        <div class="small-text">
+            One little sorry, a whole lot of love ❤️✨
+        </div>
+
+    </div>
+</section>
+
+
+<!-- PAGE 3: LOVE LETTER -->
+
+<section class="page" id="page3">
+    <div class="card">
+
+        <div class="emoji">💖🌎</div>
+
+        <h1>Why You Are Special to Me 🥹❤️</h1>
+
+        <p>
+            There are so many things I want you to know,
+            and these words come straight from my heart. 💌🫶
+        </p>
+
+        <div class="love-note">
+
+            <p>
+                🌸 <b>Your Beautiful Heart</b><br>
+                It's not just your smile that makes you special.
+                It's your heart, your little habits, your kindness
+                and the way you make ordinary moments feel special. 🥹💗
+            </p>
+
+            <p>
+                💞 <b>My Love for You</b><br>
+                I don't want to be here only when everything
+                is perfect. I want to understand you on difficult
+                days too, listen to you and celebrate your happiness. 🫂❤️
+            </p>
+
+            <p>
+                🤝 <b>Loyalty and Trust</b><br>
+                For me, love means honesty, loyalty, respect
+                and keeping my promises. I want my actions
+                to show you that you can trust me, not just
+                my words. 🔐💖
+            </p>
+
+            <p>
+                🌷 <b>Growing Together</b><br>
+                I know neither of us is perfect.
+                I want us to learn from our mistakes,
+                communicate honestly and become better
+                together, one day at a time. 🥰🫶
+            </p>
+
+            <p>
+                🏡 <b>A Future Full of Love</b><br>
+                When I think about the future, I hope for
+                a relationship filled with laughter, little
+                memories, mutual respect and a love that
+                we both choose every day. 💍❤️✨
+            </p>
+
+            <p>
+                🥺 <b>One Last Thing...</b><br>
+                I'm sorry for the times I hurt you.
+                I can't promise I'll never make a mistake,
+                but I can promise to take responsibility,
+                listen to you and keep trying to do better. 💗
+            </p>
+
+        </div>
+
+        <div class="signature">
+            You Are Special to Me ❤️🫶<br>
+            Always With Love 💌🌹
+        </div>
+
+        <button class="next-btn" onclick="showHearts()">
+            Sending You Love 💖✨
+        </button>
+
+        <div class="small-text">
+            Every beautiful story begins with understanding. 🌸💕
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function goToPage(pageNumber) {
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + pageNumber)
+        .classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    for (let i = 0; i < 10; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+
+/* NO BUTTON MOVEMENT */
+
+const noButton = document.getElementById("noButton");
+const buttonArea = document.getElementById("buttonArea");
+
+function moveNoButton() {
+
+    const area = buttonArea.getBoundingClientRect();
+
+    const maxX = Math.max(0, area.width - noButton.offsetWidth);
+    const maxY = Math.max(0, area.height - noButton.offsetHeight);
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noButton.style.left = x + "px";
+    noButton.style.top = y + "px";
+}
+
+/* Desktop */
+noButton.addEventListener("mouseenter", moveNoButton);
+
+/* Mobile */
+noButton.addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    moveNoButton();
+});
+
+/* Click fallback */
+noButton.addEventListener("click", function() {
+    moveNoButton();
+});
+
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    const emojis = ["❤️", "💗", "💕", "💖", "💘", "🌸"];
+
+    heart.textContent =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (16 + Math.random() * 22) + "px";
+
+    heart.style.animationDuration =
+        (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8500);
+}
+
+
+/* FINAL BUTTON */
+
+function showHearts() {
+
+    for (let i = 0; i < 35; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+
+}
+
+setInterval(createHeart, 1000);
+
+</script>
+
+</body>
+</html>
